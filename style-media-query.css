@@ -9,7 +9,7 @@
 
     .logo > img {
         width: 80%;
-        padding: 1rem 0;
+        padding-bottom: .5rem;
     }
 
     .sidebar {
@@ -42,10 +42,16 @@
 
     .download {
         border-bottom: 1px solid white;
+
+        justify-content: flex-start;
     }
 
     .playlists {
         visibility: visible;
+    }
+
+    .playing-buttons {
+        width: 60px;
     }
 }
 
