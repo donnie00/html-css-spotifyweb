@@ -59,6 +59,10 @@
 
 @media screen and (min-width: 992px) {
 
+    .sections-container {
+        font-size: 0.8rem;
+    }
+
     .col-lg-1_6 {
         width: calc((100% / 6) - 15px);
     }
