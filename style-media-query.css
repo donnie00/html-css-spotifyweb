@@ -35,6 +35,11 @@
         color: var(--color-secondary);
     }
 
+    .profile {
+        color: white;
+        font-weight: bold;
+    }
+
     .download {
         border-bottom: 1px solid white;
     }
@@ -46,8 +51,15 @@
 
 @media screen and (min-width: 768px) {
 
+    .col-md-1_4 {
+        width: calc((100% / 4) - 15px);
+    }
+
 }
 
 @media screen and (min-width: 992px) {
 
+    .col-lg-1_6 {
+        width: calc((100% / 6) - 15px);
+    }
 }

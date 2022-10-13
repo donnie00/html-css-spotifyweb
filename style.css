@@ -93,12 +93,14 @@ ul > li > a {
 
 .side-link {
     padding: .2rem 0;
-    opacity: .5;
 }
 
 .side-link:hover {
-    opacity: 1;
     color: white;
+}
+
+.side-link > img {
+    /* filter: grayscale();  */
 }
 
 .side-footer {
@@ -108,9 +110,7 @@ ul > li > a {
     gap: 1rem;
 }
 
-.profile {
-    opacity: 1;
-}
+
 .profile > img {
     background-color: var(--color-secondary);
 }
@@ -137,6 +137,7 @@ ul > li > a {
     font-weight: bold;
     font-size: 1.2rem;
     margin-right: .5rem;
+    background-color: var(--color-secondary);
 }
 
 .upg-bar {
@@ -207,14 +208,15 @@ ul > li > a {
     padding: 1rem 0;
 }
 
+.cl-sm-1_2 {
+    width: calc((100% / 2) - 15px);
+}
+
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     gap: 5px;
-
-    width: calc((100% / 2) - 15px);
 }
 
 .img-round {
@@ -280,10 +282,8 @@ ul > li > a {
     gap: 1rem;
 }
 
-.playing-buttons {
-    gap: .5rem;
-    display: flex;
-    flex-direction: column;
+.playing-buttons > * {
+    padding: .5rem;
 }
 
 .main-controls {
