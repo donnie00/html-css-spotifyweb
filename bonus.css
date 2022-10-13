@@ -96,10 +96,6 @@ ul > li > a {
     padding: .2rem 0;
 }
 
-.side-link:hover {
-    color: white;
-}
-
 .side-footer {
     display: flex;
     flex-wrap: wrap;
@@ -146,6 +142,8 @@ ul > li > a {
     font-size: 1.2rem;
     margin-right: .5rem;
     background-color: var(--color-secondary);
+
+    transition: border-radius 0.1s linear;
 }
 
 .upg-bar {
@@ -210,14 +208,10 @@ ul > li > a {
     --gap: 15px;
 
     display: flex;
-    flex-wrap: wrap;
     gap: var(--gap);
+    overflow: auto;
 
     padding: 1rem 0;
-}
-
-.cl-sm-1_2 {
-    width: calc((100% / 2) - 15px);
 }
 
 .card {
@@ -225,6 +219,9 @@ ul > li > a {
     flex-direction: column;
 
     gap: 5px;
+
+    width: 130px;
+    min-width: 130px;
 }
 
 .img-round {
@@ -262,7 +259,7 @@ ul > li > a {
     font-size: 3rem;
 }
 
-.card:hover .overlay {
+.card-img:hover .overlay {
     display: flex;
 }
 
@@ -355,5 +352,54 @@ ul > li > a {
 }
 
 .bar-volume {
+    display: none;
+
     width: 70px;
+}
+
+/* //hover and animations  */
+
+.main-nav > ul > li :hover{
+    color: white;
+}
+
+.upg-button:hover {
+    scale: 1.2;
+    transform: translateX(-20px);
+}
+
+.side-link:hover {
+    color: white;
+}
+
+.create-playlist:hover,
+.playlists > ul > li:hover {
+    color: white;
+}
+
+.create-playlist:hover > .new-playlist {
+    background-color: white;
+    border-radius: 50%;
+}
+
+.logo:hover,
+.logo-sm:hover {
+    opacity: 0.5;
+}
+
+.card-text > h5:hover,
+.playing-card-text > h5:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.card-text > h4:hover,
+.playing-card-text > h4:hover {
+    scale: 1.1;
+}
+
+.playing-buttons > span :hover,
+.controls > *:hover,
+.media-controls > i:hover {
+    scale: 1.3;
 }
