@@ -1,0 +1,53 @@
+@media screen and (min-width: 568px) {
+    .logo-sm {
+        display: none;
+    }
+
+    .logo {
+        display: inline-block;
+    }
+
+    .logo > img {
+        width: 80%;
+        padding: 1rem 0;
+    }
+
+    .sidebar {
+        width: 200px;
+
+        align-items: flex-start;
+    }
+
+    .sidebar span {
+        display: inline-block;
+
+    }
+
+    .sidebar img {
+        display: inline-block;
+    }
+
+    .side-link {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        color: var(--color-secondary);
+    }
+
+    .download {
+        border-bottom: 1px solid white;
+    }
+
+    .playlists {
+        visibility: visible;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
