@@ -51,6 +51,10 @@ ul > li > a {
     color: black;
 }
 
+input {
+    display: none;
+}
+
 .main-container {
     display: flex;
     flex-grow: 1;
@@ -99,6 +103,7 @@ ul > li > a {
 
 .side-links > .side-link:focus {
     box-shadow: -2px 0 var(--color-accent);
+    color: white;
 }
 
 .side-link {
@@ -194,7 +199,7 @@ ul > li > a {
     padding: 1rem 0;
 }
 
-.main-nav a {
+.main-nav p {
     text-transform: uppercase;
     color: var(--color-secondary);
 
@@ -214,10 +219,9 @@ ul > li > a {
     padding-bottom: 5px;
     position: relative;
     overflow: hidden;
-    /* transition: box-shadow 0.3s linear; */
 }
 
-.main-nav > ul > li > a:focus {
+.main-nav .nav-input:checked + .nav-label > p {
     color: white;
 }
 
@@ -343,18 +347,11 @@ ul > li > a {
     padding:5px 0;
 }
 
-.volume {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 1vw;
-}
-
 [class^=bar] {
     height: 4px;
     width: 100%;
     background-color: var(--color-secondary);
     border-radius: 50px;
-
 }
 
 .current-time,
@@ -377,15 +374,17 @@ ul > li > a {
 }
 
 .bar-volume {
-    /* display: none; */
+    display: none;
     width: 70px;
 }
 
-/* //hover and animations  */
-
-.main-nav > ul > li :hover{
-    color: white;
+.volume {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
 }
+
+/* //hover and animations  */
 
 .upg-button:hover {
     scale: 1.2;
@@ -425,11 +424,11 @@ ul > li > a {
 
 .playing-buttons > span :hover,
 .controls > *:hover,
-.media-controls > i:hover {
+.media-controls i:hover {
     scale: 1.3;
 }
 
-.main-nav > ul > li > a::after {
+.main-nav .nav-label::after {
     content: "";
     height: 2px;
     width: 0;
@@ -440,7 +439,7 @@ ul > li > a {
     transition: width 0.2s linear;
 }
 
-.main-nav > ul > li > a::before {
+.main-nav .nav-label::before {
     content: "";
     height: 2px;
     width: 0;
@@ -451,12 +450,17 @@ ul > li > a {
     transition: width 0.2s linear;
 }
 
-.main-nav > ul > li > a:hover::before,
-.main-nav > ul > li > a:hover::after,
-.main-nav > ul > li > a:focus::before,
-.main-nav > ul > li > a:focus::after {
+.main-nav .nav-label:hover > p {
+    color: white;
+}
+
+.main-nav .nav-label:hover::after,
+.main-nav .nav-input:checked + .nav-label::before,
+.main-nav .nav-label:hover::before,
+.main-nav .nav-input:checked + .nav-label::after {
     width: 30%;
 }
+
 
 .time-bar:hover .current-time::after,
 .bar-volume:hover .current-volume::after {
@@ -472,6 +476,22 @@ ul > li > a {
 
 .time-bar:hover .current-time,
 .bar-volume:hover .current-volume,
-.volume-icon:hover + .bar-volume .current-volume {
+.volume:hover > .bar-volume .current-volume {
     background-color: var(--color-accent);
+}
+
+/* other sections display */
+
+.podcast,
+.main-cards {
+    padding: 1rem 0;
+    /* display: none; */
+}
+
+#podcast:checked [class = "podcast"] {
+    display: flex;
+}
+
+#highlight:checked .main-cards {
+    display: block;
 }
