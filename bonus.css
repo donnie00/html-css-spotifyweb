@@ -195,7 +195,7 @@ input {
     overflow: auto;
 }
 
-.main-cards {
+.highlights {
     padding: 1rem 0;
 }
 
@@ -219,10 +219,6 @@ input {
     padding-bottom: 5px;
     position: relative;
     overflow: hidden;
-}
-
-.main-nav .nav-input:checked + .nav-label > p {
-    color: white;
 }
 
 .row {
@@ -450,15 +446,21 @@ input {
     transition: width 0.2s linear;
 }
 
-.main-nav .nav-label:hover > p {
+.main-nav .nav-label:hover > p,
+.main-nav .nav-label:focus > p {
     color: white;
 }
 
 .main-nav .nav-label:hover::after,
-.main-nav .nav-input:checked + .nav-label::before,
 .main-nav .nav-label:hover::before,
-.main-nav .nav-input:checked + .nav-label::after {
+.nav-label:focus::before,
+.nav-label:focus::after {
     width: 30%;
+}
+
+
+.nav-label:focus ::before {
+    color: white;
 }
 
 
@@ -482,16 +484,21 @@ input {
 
 /* other sections display */
 
+.highlights,
 .podcast,
-.main-cards {
+.rankings,
+.mood,
+.new,
+.explore {
     padding: 1rem 0;
-    /* display: none; */
+    display: none;
 }
 
-#podcast:checked [class = "podcast"] {
-    display: flex;
-}
-
-#highlight:checked .main-cards {
+#highlight:checked + .highlights,
+#podcast:checked + .podcast,
+#rankings:checked + .rankings,
+#mood:checked + .mood,
+#new:checked + .new,
+#explore:checked + .explore {
     display: block;
 }
